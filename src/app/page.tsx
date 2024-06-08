@@ -2,17 +2,18 @@
 import { useEffect } from "react";
 import { useLoading } from "./utils/hooks/useLoading";
 import Loading from "./components/Loading";
+import Nav from "./components/Nav";
 // import styles from "./page.module.css";
-
 export default function Home() {
   const { loading, startLoading, stopLoading } = useLoading();
   useEffect(() => {
     startLoading();
-    setTimeout(() => stopLoading(), 799);
+    setTimeout(() => stopLoading(), 699);
   }, [startLoading, stopLoading])
   return (
     <>
       <Loading loading={loading} />
+      Olumide
     </>
     // <main className={styles.main}>
     //   <div className={styles.description}>

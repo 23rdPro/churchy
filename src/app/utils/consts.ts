@@ -22,3 +22,10 @@ export const meta = {
   openGraph: {},
   twitter: {},
 };
+export const pages = [
+  { name: "Watch online", url: "" },
+  { name: "Ministries", url: "" },
+  { name: "Discipleship", url: "" },
+  { name: "Serve", url: "" },
+  { name: "Give", url: "" },
+]
