@@ -1,3 +1,5 @@
+import { faFacebook, faInstagram, faLinkedin, faSoundcloud, faTwitter } from "@fortawesome/free-brands-svg-icons";
+
 export const meta = {
   title: "",
   description: "",
@@ -23,9 +25,17 @@ export const meta = {
   twitter: {},
 };
 export const pages = [
-  { name: "Watch online", url: "" },
+  { name: "Watch online", url: "/" },
   { name: "Ministries", url: "" },
   { name: "Discipleship", url: "" },
   { name: "Serve", url: "" },
   { name: "Give", url: "" },
+]
+export const address = "100 Ajayi Street, Okeira Modupe Stop "
+export const email = "mercytabernacleogba@gmail.com"
+export const socials = [
+  { name: "twitter", link: "", icon: faTwitter },
+  { name: "facebook", link: "", icon: faFacebook },
+  { name: "soundcloud", link: "", icon: faSoundcloud },
+  { name: "instagram", link: "", icon: faInstagram }
 ]
