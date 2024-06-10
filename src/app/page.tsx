@@ -3,7 +3,9 @@ import { useEffect } from "react";
 import { useLoading } from "./utils/hooks/useLoading";
 import Loading from "./components/Loading";
 import Nav from "./components/Nav";
+import BannerSlider from "./components/Slider/banner";
 // import styles from "./page.module.css";
+{/* TODO: abstract loading for use in all pages */}
 export default function Home() {
   const { loading, startLoading, stopLoading } = useLoading();
   useEffect(() => {
@@ -13,7 +15,7 @@ export default function Home() {
   return (
     <>
       <Loading loading={loading} />
-      Olumide
+      <BannerSlider />
     </>
     // <main className={styles.main}>
     //   <div className={styles.description}>

@@ -16,7 +16,6 @@ const Nav = () => {
         <nav className="navbar navbar-dark navbar-expand-lg py-0">
           <a href="index-2.html" className="navbar-brand">
             <Image src={logo} alt="Bishop Bankole Jefferson" width={59} height={59} />
-            {/* <h1 className="text-white fw-bold d-block">High<span className="text-secondary">Tech</span> </h1> */}
           </a>
           <button type="button" className="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span className="navbar-toggler-icon"></span>

@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="col-lg-3 col-md-6">
             <a href="index-2.html">
               <h1 className="text-white fw-bold d-block">
-                High<span className="text-secondary">Tech</span>{" "}
+                Mercy<span className="text-secondary">World</span>{" "}
               </h1>
             </a>
             <p className="mt-4 text-light">
@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
           <div className="col-lg-3 col-md-6">
             <a href="#" className="h3 text-secondary">
-              Short Link
+              Navigation
             </a>
             <div className="mt-4 d-flex flex-column short-link">
               <a href="#" className="mb-2 text-white">
@@ -76,7 +76,7 @@ export default function Footer() {
           </div>
           <div className="col-lg-3 col-md-6">
             <a href="#" className="h3 text-secondary">
-              Help Link
+              Helpful Links
             </a>
             <div className="mt-4 d-flex flex-column help-link">
               <a href="#" className="mb-2 text-white">
@@ -101,7 +101,7 @@ export default function Footer() {
           </div>
           <div className="col-lg-3 col-md-6">
             <a href="#" className="h3 text-secondary">
-              Contact Us
+              Reach Out
             </a>
             <div className="text-white mt-4 d-flex flex-column contact-link">
               <a

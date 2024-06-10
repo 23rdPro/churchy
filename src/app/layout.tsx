@@ -8,6 +8,8 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./styles/animate/animate.min.css";
 import "./styles/bootstrap.min.css";
 import "./styles/style.css";
+import 'swiper/css';
+import 'swiper/css/bundle';
 import TopBar from "./components/TopBar";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -55,10 +57,10 @@ export default function RootLayout({
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
           strategy="afterInteractive"
         />
-        <Script src="jss/wow/wow.min.js" strategy="lazyOnload" />
-        <Script src="jss/easing/easing.min.js" strategy="lazyOnload" />
-        <Script src="jss/waypoints/waypoints.min.js" strategy="lazyOnload" />
-        <Script src="jss/main.js" strategy="lazyOnload" />
+        <Script src="js/wow/wow.min.js" strategy="lazyOnload" />
+        <Script src="js/easing/easing.min.js" strategy="lazyOnload" />
+        <Script src="js/waypoints/waypoints.min.js" strategy="lazyOnload" />
+        <Script src="js/main.js" strategy="lazyOnload" />
       </body>
     </html>
   );
