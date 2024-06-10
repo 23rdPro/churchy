@@ -265,8 +265,8 @@
     }
     
     .carousel-item img {
-        min-height: 500px;
-        object-fit: cover;
+        min-height: 10px;
+        object-fit: fill;
     }
 
     .carousel-item h1 {

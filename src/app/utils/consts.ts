@@ -50,3 +50,10 @@ export const helpLinks = [
   { name: "linkedin", icon: faLinkedin, link: "" },
 ];
 export const name = "Bishop Bankole Jefferson";
+export const welcomeCharge = `At The Mercy Tabernacle, our vision is to make a profound impact 
+by relieving humanity from poverty and suffering, facilitating healing, and liberating individuals. 
+We aim to transform lives, shaping them to mirror Christ's image, and raising individuals as 
+pacesetters, role models, and achievers through the teachings of Jesus Christ. Join us on our 
+mission to uphold a model of exemplary Christianity that emphasizes integrity, dedicated 
+service to God and humanity, righteous living, strong family values, success in life, 
+and an unwavering fear of God.`
