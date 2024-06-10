@@ -1,7 +1,6 @@
 import { SwiperSlide } from "swiper/react";
 import banner from "../../../../public/img/june.jpeg";
 import banner2 from "../../../../public/img/dd3.jpeg";
-import banner3 from "../../../../public/img/dd2.jpeg";
 import Image from "next/image";
 import { Autoplay, Navigation } from "swiper/modules";
 import Slider from ".";
@@ -10,9 +9,8 @@ import { useState } from "react";
 
 const bannerSlider = (Component: any) => {
   const banners: any = [
-    // { src: banner, alt: name },
+    { src: banner, alt: name },
     { src: banner2, alt: name },
-    // { src: banner3, alt: name },
   ];
   const WithComponent = () => {
     const [activeIndex, setActiveIndex] = useState(0);
