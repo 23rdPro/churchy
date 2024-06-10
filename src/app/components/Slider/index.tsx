@@ -32,10 +32,6 @@ const Slider = ({
   return (
     <div className="container-fluid px-0">
       <div id="carouselId" className="carousel slide" data-bs-ride="carousel">
-        {/* <ol className="carouel-indictors">
-          <li data-bs-target="carouselId" data-bs-slide-to="0" className="active" aria-current="true" aria-label="First slide" />
-          <li data-bs-target="carouselId" data-bs-slide-to="1" aria-label="Second slide" />
-        </ol> */}
         <Swiper
           className={className}
           slidesPerView={slidesPerView}
@@ -50,6 +46,7 @@ const Slider = ({
           effect={effect}
           role={role}
           onSlideChange={onSlideChange}
+          loop
         >
           {children}
         </Swiper>

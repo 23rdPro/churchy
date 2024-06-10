@@ -10,6 +10,7 @@ import "./styles/bootstrap.min.css";
 import "./styles/style.css";
 import 'swiper/css';
 import 'swiper/css/bundle';
+import './styles/custom.swiper.nav.css'
 import TopBar from "./components/TopBar";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";

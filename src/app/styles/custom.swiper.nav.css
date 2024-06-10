@@ -1,0 +1,48 @@
+/* Custom styles for previous button */
+.swiper-button-prev {
+  width: 90px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: var(--bs-primary);
+  border-radius: 0 50px 50px 0;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50%); /* Center vertically */
+  transition: background 0.8s;
+}
+
+.swiper-button-prev:hover {
+  background: var(--bs-secondary);
+}
+
+/* Custom styles for next button */
+.swiper-button-next {
+  width: 90px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  background: var(--bs-primary);
+  border-radius: 50px 0 0 50px;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50%); /* Center vertically */
+  transition: background 0.8s;
+}
+
+.swiper-button-next:hover {
+  background: var(--bs-secondary);
+}
+
+/* Custom styles for the arrow icons */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px; /* Adjust the size of the arrows */
+  color: #fff; /* Ensure arrows are visible against background */
+}
