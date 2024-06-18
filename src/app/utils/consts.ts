@@ -5,6 +5,7 @@ import {
   faSoundcloud,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { faPersonPraying, faDove, faBookBible } from "@fortawesome/free-solid-svg-icons";
 
 export const meta = {
   title: "",
@@ -57,3 +58,11 @@ pacesetters, role models, and achievers through the teachings of Jesus Christ. J
 mission to uphold a model of exemplary Christianity that emphasizes integrity, dedicated 
 service to God and humanity, righteous living, strong family values, success in life, 
 and an unwavering fear of God.`
+export const factBoxes = [
+  // { icon: faChurch },
+  // { icon: faHandsPraying },
+  { icon: faPersonPraying, title: "Holy Spirit" },
+  { icon: faDove, title: "Holy Spirit" },
+  { icon: faBookBible, title: "Holy Spirit" },
+  // { icon: faStarAndCrescent },
+];

@@ -2,33 +2,18 @@
 import { useEffect } from "react";
 import { useLoading } from "./utils/hooks/useLoading";
 import Loading from "./components/Loading";
-import Nav from "./components/Nav";
 import BannerSlider from "./components/Slider/banner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import icon from "../../public/img/icon.jpeg";
-import {
-  faBookBible,
-  faChurch,
-  faDove,
-  faHandsPraying,
-  faPersonPraying,
-  faStarAndCrescent,
-} from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
-import { welcomeCharge } from "./utils/consts";
+import { factBoxes, welcomeCharge } from "./utils/consts";
+import { montserratAlternates } from "./utils/fonts";
+import Facebook from "./components/Facebook";
 // import styles from "./page.module.css";
 {
   /* TODO: abstract loading for use in all pages */
 }
 export default function Home() {
-  const factBoxes = [
-    // { icon: faChurch },
-    // { icon: faHandsPraying },
-    { icon: faPersonPraying, title: "Holy Spirit" },
-    { icon: faDove, title: "Holy Spirit" },
-    { icon: faBookBible, title: "Holy Spirit" },
-    // { icon: faStarAndCrescent },
-  ];
   const { loading, startLoading, stopLoading } = useLoading();
   useEffect(() => {
     startLoading();
@@ -94,13 +79,89 @@ export default function Home() {
               <h1 className="mb-4" style={{ fontWeight: "bolder" }}>
                 Mercy World Outreach
               </h1>
-              <p style={{ fontStyle: "italic" }}>{welcomeCharge}</p>
+              <p className={montserratAlternates.className}>{welcomeCharge}</p>
               <a
                 href="#"
                 className="btn btn-secondary rounded-pill px-5 py-3 text-white"
               >
                 Read More
               </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container-fluid py-5 mb-5">
+        <div className="container">
+          <div
+            className="text-center mx-auto pb-5 wow fadeIn"
+            data-wow-delay=".3s"
+            style={{ maxWidth: "600px" }}
+          >
+            <h5 className="text-primary">What&apos;s new at</h5>
+            <h1 className="mb-3">The Mercy Tabernacle</h1>
+            <p className="mb-2">
+              The contact form is currently inactive. Get a functional and
+              working contact form with Ajax & PHP in a few minutes. Just copy
+              and paste the files, add a little code and you are done.{" "}
+              <a href="https://htmlcodex.com/contact-form">Download Now</a>.
+            </p>
+          </div>
+          <div className="contact-detail position-relative p-5">
+            <div className="row g-5">
+              <div className="col-lg-6 wow fadeIn" data-wow-delay=".3s">
+                <div className="p-5 h-100 rounded contact-map">
+                  {/* <iframe
+                    className="rounded w-100 h-100"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.4710403339755!2d-73.82241512404069!3d40.685622471397615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c26749046ee14f%3A0xea672968476d962c!2s123rd%20St%2C%20Queens%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1686493221834!5m2!1sen!2sbd"
+                    style={{ border: "0" }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe> */}
+                  {/* <Facebook /> */}
+                </div>
+              </div>
+              <div className="col-lg-6 wow fadeIn" data-wow-delay=".5s">
+                <div className="p-5 rounded contact-form">
+                  <div className="mb-4">
+                    <input
+                      type="text"
+                      className="form-control border-0 py-3"
+                      placeholder="Your Name"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <input
+                      type="email"
+                      className="form-control border-0 py-3"
+                      placeholder="Your Email"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <input
+                      type="text"
+                      className="form-control border-0 py-3"
+                      placeholder="Project"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <textarea
+                      className="w-100 form-control border-0 py-3"
+                      rows={6}
+                      cols={10}
+                      placeholder="Message"
+                    ></textarea>
+                  </div>
+                  <div className="text-start">
+                    <button
+                      className="btn bg-primary text-white py-3 px-5"
+                      type="button"
+                    >
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
