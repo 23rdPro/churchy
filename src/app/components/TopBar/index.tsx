@@ -2,7 +2,11 @@ import { address, email, socials } from "@/app/utils/consts";
 import ChurchyCountdown from "../Countdown";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChurch, faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChurch,
+  faEnvelope,
+  faMapMarkerAlt,
+} from "@fortawesome/free-solid-svg-icons";
 export default function TopBar() {
   return (
     <div className="container-fluid bg-dark py-2 d-flex d-md-flex overflow-hidden">
@@ -29,7 +33,11 @@ export default function TopBar() {
             </small>
           </div>
           <div className="d-lg-none">
-            <FontAwesomeIcon icon={faChurch} className="text-secondary" size="lg" />
+            <FontAwesomeIcon
+              icon={faChurch}
+              className="text-secondary"
+              size="lg"
+            />
           </div>
           <div id="note" className="text-secondary d-flex d-xl-flex">
             <ChurchyCountdown />
@@ -49,4 +57,4 @@ export default function TopBar() {
       </div>
     </div>
   );
-};
+}
