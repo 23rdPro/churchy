@@ -1,17 +1,17 @@
 import { Swiper } from "swiper/react";
 export type SliderType = {
-  className: string,
-  slidesPerView: number,
-  modules: any,
-  autoplay: boolean,
-  speed: any,
-  spaceBetween: any,
-  navigation: any,
-  pagination: any,
-  onActiveIndexChange: any,
-  fadeEffect: any,
-  effect: any,
-  children: any,
+  className: string;
+  slidesPerView: number;
+  modules: any;
+  autoplay: boolean;
+  speed: any;
+  spaceBetween: any;
+  navigation: any;
+  pagination: any;
+  onActiveIndexChange: any;
+  fadeEffect: any;
+  effect: any;
+  children: any;
 };
 const Slider = ({
   className,
