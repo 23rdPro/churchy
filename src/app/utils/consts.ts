@@ -5,7 +5,11 @@ import {
   faSoundcloud,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { faPersonPraying, faDove, faBookBible } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPersonPraying,
+  faDove,
+  faBookBible,
+} from "@fortawesome/free-solid-svg-icons";
 
 export const meta = {
   title: "",
@@ -57,7 +61,7 @@ We aim to transform lives, shaping them to mirror Christ's image, and raising in
 pacesetters, role models, and achievers through the teachings of Jesus Christ. Join us on our 
 mission to uphold a model of exemplary Christianity that emphasizes integrity, dedicated 
 service to God and humanity, righteous living, strong family values, success in life, 
-and an unwavering fear of God.`
+and an unwavering fear of God.`;
 export const factBoxes = [
   // { icon: faChurch },
   // { icon: faHandsPraying },
