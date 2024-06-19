@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
-  if (!process.env.FACEBOOK) {};  // TODO
+  if (!process.env.FACEBOOK) {
+    throw new Error("set facebook appId ):")
+  }; 
   const facebookId = process.env.FACEBOOK;
   return facebookId
     ? NextResponse.json({ facebookId })

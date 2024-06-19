@@ -9,27 +9,26 @@ import Image from "next/image";
 import { factBoxes, welcomeCharge } from "./utils/consts";
 import { montserratAlternates } from "./utils/fonts";
 import Facebook from "./components/Facebook";
+import useSWR from "swr";
+const fetcher = (route: string) => fetch(route).then((res: any) => res.json());
 export default function Home() {
   const { loading, startLoading, stopLoading } = useLoading();
   const [appId, setAppId] = useState("");
-  const [error, setError] = useState<string | null>(null);
+  const { data, error } = useSWR("/api/facebookId", fetcher);
   useEffect(() => {
     startLoading();
-    setTimeout(() => stopLoading(), 699);
-    const fetchFacebookId = async () => {
-      try {
-        const response = await fetch('/api/facebookId');
-        const data = await response.json();
-        response.ok ? setAppId(data.facebookId) : setError(data.error)
-      } catch (err) {
-        console.error(err)
-      };
-    };
-    fetchFacebookId();  // TODO fetch once
-  }, [startLoading, stopLoading]);
-  return (
+    if (data) {
+      setAppId(data.facebookId);
+      stopLoading();
+    } else if (error) {
+      stopLoading();
+      console.error(error);
+    }
+  }, [startLoading, stopLoading, data, error]);
+  return loading ? (
+    <Loading loading={loading} />
+  ) : (
     <>
-      <Loading loading={loading} />
       <BannerSlider />
       <div className="container-fluid services py-5 mb-3">
         <div className="container">
@@ -106,7 +105,7 @@ export default function Home() {
             style={{ maxWidth: "600px" }}
           >
             <h5 className="text-primary">What&apos;s new at</h5>
-            <h1 className="mb-3">The Mercy Tabernacle</h1>
+            <h1 className="mb-3">Th Mercy Tabernacle</h1>
             <p className="mb-2">
               The contact form is currently inactive. Get a functional and
               working contact form with Ajax & PHP in a few minutes. Just copy
@@ -118,9 +117,7 @@ export default function Home() {
             <div className="row g-5">
               <div className="col-lg-6 wow fadeIn" data-wow-delay=".3s">
                 <div className="p-5 h-100 rounded contact-map">
-                  <div className="rounded w-100 h-100" style={{ border: "0" }}>
-                    <Facebook appId={appId} />
-                  </div>
+                  <Facebook appId={"appId"} />
                 </div>
               </div>
               <div className="col-lg-6 wow fadeIn" data-wow-delay=".5s">
