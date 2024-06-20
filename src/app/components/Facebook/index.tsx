@@ -10,6 +10,7 @@ export default function Facebook({ appId }: FacebookType) {
         href="https://web.facebook.com/profile.php?id=100064330643873"
         tabs="timeline"
         width={2999}
+        height={595}
       />
     </FacebookProvider>
   );

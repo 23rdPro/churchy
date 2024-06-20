@@ -37,10 +37,11 @@ export const meta = {
 };
 export const pages = [
   { name: "Watch online", url: "/" },
-  { name: "Ministries", url: "" },
+  { name: "About", url: "" },
   { name: "Discipleship", url: "" },
   { name: "Serve", url: "" },
   { name: "Give", url: "" },
+  { name: "Blog", url: "/pages/blog" }
 ];
 export const address = "100 Ajayi Street, Okeira Modupe Stop ";
 export const email = "mercytabernacleogba@gmail.com";
@@ -70,3 +71,12 @@ export const factBoxes = [
   { icon: faBookBible, title: "Holy Spirit" },
   // { icon: faStarAndCrescent },
 ];
+export const newStuff = `There's always something new at The Mercy World. 
+Whether it's community outreach, dedicated study of the word of God, holy 
+communion, or fervent prayers, we continually encourage one another in our most holy 
+faith whenever we gather.`
+export const blogAttr = {
+  title: "",
+
+}
+export const blogs = [1, 2, 3]

@@ -6,7 +6,7 @@ import BannerSlider from "./components/Slider/banner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import icon from "../../public/img/icon.jpeg";
 import Image from "next/image";
-import { factBoxes, welcomeCharge } from "./utils/consts";
+import { factBoxes, newStuff, socials, welcomeCharge } from "./utils/consts";
 import { montserratAlternates } from "./utils/fonts";
 import Facebook from "./components/Facebook";
 import useSWR from "swr";
@@ -86,7 +86,9 @@ export default function Home() {
               <h1 className="mb-4" style={{ fontWeight: "bolder" }}>
                 Mercy World Outreach
               </h1>
-              <p className={montserratAlternates.className}>{welcomeCharge}</p>
+              <p className={`${montserratAlternates.className}`}>
+                {welcomeCharge}
+              </p>
               <a
                 href="#"
                 className="btn btn-secondary rounded-pill px-5 py-3 text-white"
@@ -107,57 +109,101 @@ export default function Home() {
             <h5 className="text-primary">What&apos;s new at</h5>
             <h1 className="mb-3">Th Mercy Tabernacle</h1>
             <p className="mb-2">
-              The contact form is currently inactive. Get a functional and
-              working contact form with Ajax & PHP in a few minutes. Just copy
-              and paste the files, add a little code and you are done.{" "}
-              <a href="https://htmlcodex.com/contact-form">Download Now</a>.
+              {newStuff}{" "}
+              <a
+                href={
+                  socials.find((social) => social.name === "soundcloud")?.link
+                }
+              >
+                Listen Now
+              </a>
+              .
             </p>
           </div>
           <div className="contact-detail position-relative p-5">
             <div className="row g-5">
               <div className="col-lg-6 wow fadeIn" data-wow-delay=".3s">
                 <div className="p-5 h-100 rounded contact-map">
-                  <Facebook appId={"appId"} />
+                  <Facebook appId={appId} />
                 </div>
               </div>
               <div className="col-lg-6 wow fadeIn" data-wow-delay=".5s">
                 <div className="p-5 rounded contact-form">
-                  <div className="mb-4">
-                    <input
-                      type="text"
-                      className="form-control border-0 py-3"
-                      placeholder="Your Name"
+                  <div className="blog-item position-relative bg-light rounded">
+                    <Image
+                      src="/img/blog-2.jpg"
+                      className="img-fluid w-100 rounded-top"
+                      alt=""
+                      width={400}
+                      height={400}
                     />
-                  </div>
-                  <div className="mb-4">
-                    <input
-                      type="email"
-                      className="form-control border-0 py-3"
-                      placeholder="Your Email"
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <input
-                      type="text"
-                      className="form-control border-0 py-3"
-                      placeholder="Project"
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <textarea
-                      className="w-100 form-control border-0 py-3"
-                      rows={6}
-                      cols={10}
-                      placeholder="Message"
-                    ></textarea>
-                  </div>
-                  <div className="text-start">
-                    <button
-                      className="btn bg-primary text-white py-3 px-5"
-                      type="button"
+                    <span
+                      className="position-absolute px-4 py-3 bg-primary text-white rounded"
+                      style={{ top: "-28px", right: "20px" }}
                     >
-                      Send Message
-                    </button>
+                      Web Design
+                    </span>
+                    <div
+                      className="blog-btn d-flex justify-content-between position-relative px-3"
+                      style={{ marginTop: "-75px" }}
+                    >
+                      <div className="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
+                        <a href="#" className="btn text-white">
+                          Read More
+                        </a>
+                      </div>
+                      <div className="blog-btn-icon btn btn-secondary px-4 py-3 rounded-pill ">
+                        <div className="blog-icon-1">
+                          <p className="text-white px-2">
+                            Share<i className="fa fa-arrow-right ms-3"></i>
+                          </p>
+                        </div>
+                        <div className="blog-icon-2">
+                          <a href="#" className="btn me-1">
+                            <i className="fab fa-facebook-f text-white"></i>
+                          </a>
+                          <a href="#" className="btn me-1">
+                            <i className="fab fa-twitter text-white"></i>
+                          </a>
+                          <a href="#" className="btn me-1">
+                            <i className="fab fa-instagram text-white"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="blog-content text-center position-relative px-3"
+                      style={{ marginTop: "-25px" }}
+                    >
+                      <Image
+                        src="/img/admin.jpg"
+                        className="img-fluid rounded-circle border border-4 border-white mb-3"
+                        alt=""
+                        width={90}
+                        height={90}
+                      />
+                      <h5 className="">By Daniel Martin</h5>
+                      <span className="text-secondary">24 March 2023</span>
+                      <p className="py-2">
+                        Lorem ipsum dolor sit amet elit. Sed efficitur quis
+                        purus ut interdum. Aliquam dolor eget urna ultricies
+                        tincidunt libero sit amet
+                      </p>
+                    </div>
+                    <div className="blog-coment d-flex justify-content-between px-4 py-2 border bg-primary rounded-bottom">
+                      <a href="#" className="text-white">
+                        <small>
+                          <i className="fas fa-share me-2 text-secondary"></i>
+                          5324 Share
+                        </small>
+                      </a>
+                      <a href="#" className="text-white">
+                        <small>
+                          <i className="fa fa-comments me-2 text-secondary"></i>
+                          5 Comments
+                        </small>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

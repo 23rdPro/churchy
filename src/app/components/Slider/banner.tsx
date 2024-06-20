@@ -27,7 +27,7 @@ const bannerSlider = (Component: any) => {
       >
         {banners.map((banner: any, index: number) => (
           <SwiperSlide
-            key={index++}
+            key={index}
             className={`${index === activeIndex ? "active" : ""}`}
           >
             <Image
