@@ -326,6 +326,9 @@
     position: relative;
 }
 
+.services .services-item.no-padding {
+    padding: 0;
+}
 
 .services-content::after {
     position: absolute;

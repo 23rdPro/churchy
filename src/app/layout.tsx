@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { meta } from "./utils/consts";
-// import "./globals.css";
 import { inter, saira } from "./utils/fonts";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -10,7 +9,8 @@ import "./styles/bootstrap.min.css";
 import "./styles/style.css";
 import 'swiper/css';
 import 'swiper/css/bundle';
-import './styles/custom.swiper.nav.css'
+import './styles/custom.swiper.nav.css';
+import './styles/blog.detail.css';
 import TopBar from "./components/TopBar";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";

@@ -62,7 +62,7 @@ export default function Blog() {
                     style={{ marginTop: "-75px" }}
                   >
                     <div className="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
-                      <a href="#" className="btn text-white ">
+                      <a href={`/pages/blog/${blog.id}`} className="btn text-white ">
                         Read More
                       </a>
                     </div>
