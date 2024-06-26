@@ -3,18 +3,21 @@ import { useEffect, useState } from "react";
 import { useLoading } from "./utils/hooks/useLoading";
 import Loading from "./components/Loading";
 import BannerSlider from "./components/Slider/banner";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import icon from "../../public/img/icon.jpeg";
 import Image from "next/image";
-import { factBoxes, newStuff, socials, welcomeCharge } from "./utils/consts";
+import { newStuff, socials, welcomeCharge } from "./utils/consts";
 import { montserratAlternates } from "./utils/fonts";
 import Facebook from "./components/Facebook";
 import useSWR from "swr";
-const fetcher = (route: string) => fetch(route).then((res: any) => res.json());
+import Ministry from "./components/Ministry";
+import Location from "./components/Map";
+import useMediaType from "./utils/hooks/useMediaType";
+import { fetcher } from "./utils/libs";
 export default function Home() {
   const { loading, startLoading, stopLoading } = useLoading();
   const [appId, setAppId] = useState("");
   const { data, error } = useSWR("/api/facebookId", fetcher);
+  const mediaType = useMediaType();
   useEffect(() => {
     startLoading();
     if (data) {
@@ -30,40 +33,8 @@ export default function Home() {
   ) : (
     <>
       <BannerSlider />
-      <div className="container-fluid services py-5 mb-3">
+      <div className="container-fluid py-5 my-2">
         <div className="container">
-          <div className="row g-5 services-inner">
-            {factBoxes.map((fact: any, index: number) => (
-              <div
-                key={index++}
-                className="col-lg-4 wow fadeIn"
-                data-wow-delay=".3s"
-              >
-                <div className="services-item bg-light">
-                  <div className="p-4 text-center services-content">
-                    <div className="services-content-icon">
-                      <FontAwesomeIcon
-                        icon={fact.icon}
-                        size="7x"
-                        className="mb-4 text-primary icon-hover"
-                      />
-                      <h4 className="mb-3">{fact.title}</h4>
-                      <a
-                        href="#"
-                        className="btn btn-secondary text-white px-5 py-3 rounded-pill"
-                      >
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="container-fluid py-3 my-3">
-        <div className="container pt-3">
           <div className="row g-5">
             <div
               className="col-lg-5 col-md-6 col-sm-12 wow fadeIn"
@@ -83,7 +54,7 @@ export default function Home() {
               data-wow-delay=".5s"
             >
               <h4 className="text-primary">Bishop Bankole Jefferson DD</h4>
-              <h1 className="mb-4" style={{ fontWeight: "bolder" }}>
+              <h1 className="mb-2" style={{ fontWeight: "bolder" }}>
                 Mercy World Outreach
               </h1>
               <p className={`${montserratAlternates.className}`}>
@@ -99,7 +70,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="container-fluid py-5 mb-5">
+      <Ministry />
+      <div className="container-fluid py-3 mb-5">
         <div className="container">
           <div
             className="text-center mx-auto pb-5 wow fadeIn"
@@ -120,15 +92,15 @@ export default function Home() {
               .
             </p>
           </div>
-          <div className="contact-detail position-relative p-5">
-            <div className="row g-5">
-              <div className="col-lg-6 wow fadeIn" data-wow-delay=".3s">
-                <div className="p-5 h-100 rounded contact-map">
+          <div className={`contact-detail position-relative ${mediaType === 'desktop' ? "p-5" : "p-3"}`}>
+            <div className="row g-3">
+              <div className="col-lg-6 wow fadeIn mb-5" data-wow-delay=".3s">
+                <div className={`${mediaType === 'desktop' ? "p-5" : "p-0"} h-100 rounded contact-map`}>
                   <Facebook appId={appId} />
                 </div>
               </div>
-              <div className="col-lg-6 wow fadeIn" data-wow-delay=".5s">
-                <div className="p-5 rounded contact-form">
+              <div className="col-lg-6 wow fadeIn mt-5" data-wow-delay=".5s">
+                <div className={`${mediaType === 'desktop' ? "p-5" : "p-0" } rounded contact-form`}>
                   <div className="blog-item position-relative bg-light rounded">
                     <Image
                       src="/img/blog-2.jpg"
@@ -211,6 +183,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Location />
     </>
   );
 }

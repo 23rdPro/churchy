@@ -1,5 +1,5 @@
 "use client";
-import { pages } from "@/app/utils/consts";
+import { mobile, pages } from "@/app/utils/consts";
 import {
   faChurch,
   faCommentDots,
@@ -78,7 +78,7 @@ const Nav = () => {
             </div>
             <div className="d-flex flex-column pe-4 border-end">
               <span className="text-white-50">Have any questions?</span>
-              <span className="text-secondary">Call: + 0123 456 7890</span>
+              <span className="text-secondary">Call: {mobile}</span>
             </div>
             <div className="d-flex align-items-center justify-content-center ms-4 ">
               <a href="#">

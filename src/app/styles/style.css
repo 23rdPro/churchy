@@ -302,6 +302,28 @@
     background-size: cover;
 }
 
+@media (max-width: 600px) {
+    .page-header {
+      background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(/img/brand.jpg) center center no-repeat;
+      background-size: cover;
+      height: 15vh
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 1024px) {
+    .page-header {
+      background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(/img/brand.jpg) center center no-repeat;
+      background-size: cover;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .page-header {
+      background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(/img/brand.jpg) center center no-repeat;
+      background-size: cover;
+    }
+  }
+
 .page-header .breadcrumb-item+.breadcrumb-item::before {
     color: var(--bs-white);
 }
@@ -667,3 +689,11 @@
 }
 
 /*** Footer End ***/
+
+.ministry-description {
+    height: 100px; /* Adjust the height as needed */
+    overflow: hidden; /* Ensures content that exceeds height is hidden */
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+  }

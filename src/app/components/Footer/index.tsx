@@ -1,6 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faAngleRight, faCopyright, faEnvelope, faMapMarkerAlt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleRight,
+  faCopyright,
+  faEnvelope,
+  faMapMarkerAlt,
+  faPhoneAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  address,
+  email,
+  helpfulLinks,
+  mobile,
+  pages,
+  socials,
+} from "@/app/utils/consts";
+import Link from "next/link";
 export default function Footer() {
   return (
     <div
@@ -16,35 +30,22 @@ export default function Footer() {
               </h1>
             </a>
             <p className="mt-4 text-light">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-              facere delectus qui placeat inventore consectetur repellendus
-              optio debitis.
+              Experience warmth through fellowship at our Sunday 8am and
+              Wednesday 6pm worship services.
             </p>
             <div className="d-flex hightech-link">
-              <a
-                href="#"
-                className="btn-light nav-fill btn btn-square rounded-circle me-2"
-              >
-                <i className="fab fa-facebook-f text-primary"></i>
-              </a>
-              <a
-                href="#"
-                className="btn-light nav-fill btn btn-square rounded-circle me-2"
-              >
-                <FontAwesomeIcon icon={faTwitter} className="text-primary"/>
-              </a>
-              <a
-                href="#"
-                className="btn-light nav-fill btn btn-square rounded-circle me-2"
-              >
-                <FontAwesomeIcon icon={faInstagram} className="text-primary"/>
-              </a>
-              <a
-                href="#"
-                className="btn-light nav-fill btn btn-square rounded-circle me-0"
-              >
-                <FontAwesomeIcon icon={faLinkedin} className="text-primary"/>
-              </a>
+              {socials.map((social, index) => (
+                <Link
+                  key={index}
+                  href={social.link}
+                  className="btn-light nav-fill btn btn-square rounded-circle me-2"
+                >
+                  <FontAwesomeIcon
+                    icon={social.icon}
+                    className="text-primary"
+                  />
+                </Link>
+              ))}
             </div>
           </div>
           <div className="col-lg-3 col-md-6">
@@ -52,26 +53,15 @@ export default function Footer() {
               Navigation
             </a>
             <div className="mt-4 d-flex flex-column short-link">
-              <a href="#" className="mb-2 text-white">
-                <FontAwesomeIcon icon={faAngleRight} className="text-secondary me-2" />About
-                us
-              </a>
-              <a href="#" className="mb-2 text-white">
-                <FontAwesomeIcon icon={faAngleRight} className="text-secondary me-2" />
-                Contact us
-              </a>
-              <a href="#" className="mb-2 text-white">
-                <FontAwesomeIcon icon={faAngleRight} className="text-secondary me-2" />Our
-                Services
-              </a>
-              <a href="#" className="mb-2 text-white">
-                <FontAwesomeIcon icon={faAngleRight} className="text-secondary me-2" />Our
-                Projects
-              </a>
-              <a href="#" className="mb-2 text-white">
-                <FontAwesomeIcon icon={faAngleRight} className="text-secondary me-2" />Latest
-                Blog
-              </a>
+              {pages.map((page, index) => (
+                <Link key={index} href={page.url} className="mb-2 text-white">
+                  <FontAwesomeIcon
+                    icon={faAngleRight}
+                    className="text-secondary me-2"
+                  />
+                  {page.name}
+                </Link>
+              ))}
             </div>
           </div>
           <div className="col-lg-3 col-md-6">
@@ -79,24 +69,15 @@ export default function Footer() {
               Helpful Links
             </a>
             <div className="mt-4 d-flex flex-column help-link">
-              <a href="#" className="mb-2 text-white">
-                <FontAwesomeIcon icon={faAngleRight} className="text-secondary me-2" />Terms
-                Of use
-              </a>
-              <a href="#" className="mb-2 text-white">
-                <FontAwesomeIcon icon={faAngleRight} className="text-secondary me-2" />
-                Privacy Policy
-              </a>
-              <a href="#" className="mb-2 text-white">
-                <FontAwesomeIcon icon={faAngleRight} className="text-secondary me-2" />Helps
-              </a>
-              <a href="#" className="mb-2 text-white">
-                <i className="fas fa-angle-right text-secondary me-2"></i>FQAs
-              </a>
-              <a href="#" className="mb-2 text-white">
-                <i className="fas fa-angle-right text-secondary me-2"></i>
-                Contact
-              </a>
+              {helpfulLinks.map((link, index) => (
+                <Link key={index} href={link.link} className="mb-2 text-white">
+                  <FontAwesomeIcon
+                    icon={faAngleRight}
+                    className="text-secondary me-2"
+                  />
+                  {link.name}
+                </Link>
+              ))}
             </div>
           </div>
           <div className="col-lg-3 col-md-6">
@@ -108,22 +89,31 @@ export default function Footer() {
                 href="#"
                 className="pb-3 text-light border-bottom border-primary"
               >
-                <FontAwesomeIcon icon={faMapMarkerAlt} className="text-secondary me-2" />{" "}
-                123 Street, New York, USA
+                <FontAwesomeIcon
+                  icon={faMapMarkerAlt}
+                  className="text-secondary me-2"
+                />{" "}
+                {address}
               </a>
               <a
                 href="#"
                 className="py-3 text-light border-bottom border-primary"
               >
-                <FontAwesomeIcon icon={faPhoneAlt} className="text-secondary me-2" /> +123
-                456 7890
+                <FontAwesomeIcon
+                  icon={faPhoneAlt}
+                  className="text-secondary me-2"
+                />{" "}
+                {mobile}
               </a>
               <a
                 href="#"
                 className="py-3 text-light border-bottom border-primary"
               >
-                <FontAwesomeIcon icon={faEnvelope} className="text-secondary me-2" />{" "}
-                info@exmple.con
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  className="text-secondary me-2"
+                />{" "}
+                {email}
               </a>
             </div>
           </div>
@@ -132,20 +122,17 @@ export default function Footer() {
         <div className="row">
           <div className="col-md-6 text-center text-md-start">
             <span className="text-light">
-              <a href="#" className="text-secondary">
-                <FontAwesomeIcon icon={faCopyright} className="text-secondary me-2" />Your
-                Site Name
+              <a
+                href="https://www.mercyworldonline.com/"
+                className="text-secondary"
+              >
+                <FontAwesomeIcon
+                  icon={faCopyright}
+                  className="text-secondary me-2"
+                />
+                Mercy Tabernacle
               </a>
-              , All right reserved.
-            </span>
-          </div>
-          <div className="col-md-6 text-center text-md-end">
-            <span className="text-light">
-              Designed By
-              <a href="https://htmlcodex.com/" className="text-secondary">
-                HTML Codex
-              </a>{" "}
-              Distributed By <a href="https://themewagon.com/">ThemeWagon</a>
+              , All rights reserved.
             </span>
           </div>
         </div>

@@ -1,33 +1,29 @@
 "use client";
+import HeaderDisplay from "@/app/components/HeaderDisplay";
 import Loading from "@/app/components/Loading";
-import { blogs } from "@/app/utils/consts";
 import { useLoading } from "@/app/utils/hooks/useLoading";
+import { fetcher } from "@/app/utils/libs";
 import Image from "next/image";
 import { useEffect } from "react";
-
-export default function Blog() {
+import useSWR from "swr";
+export default function Blogs() {
   const { loading, startLoading, stopLoading } = useLoading();
+  const { data, error } = useSWR("/api/blogs", fetcher);
+  const blogs = data?.items || []
+  const headerData = {
+    title: "Our Teachings ",
+    desc: "our publications on the teachings of Faith and Holy Communion",
+  };
   useEffect(() => {
     startLoading();
     const timer = setTimeout(() => {
       stopLoading();
-    }, 333);
+    }, 111);
   }, [startLoading, stopLoading]);
   return (
     <>
       <Loading loading={loading} />
-      <div className="container-fluid page-header py-5">
-        <div className="container text-center py-5">
-          <h1 className="display-2 text-white mb-4 animated slideInDown">
-            Our Teachings
-          </h1>
-          <nav aria-label="breadcrumb animated slideInDown">
-            <p className="breadcrumb breadcrumb-item justify-content-center mb-0">
-              Read our publications on the teachings of Faith and Holy Communion
-            </p>
-          </nav>
-        </div>
-      </div>
+      <HeaderDisplay {...headerData}/>
       <div className="container-fluid blog py-5 my-5">
         <div className="container py-5">
           <div
@@ -40,7 +36,7 @@ export default function Blog() {
           </div>
           {blogs.length ? (
             <div className="row g-5 justify-content-center">
-              {blogs.map((blog, index) => (
+              {blogs.map((blog: any, index: number) => (
                 <div
                   key={index}
                   className="col-lg-6 col-xl-4 wow fadeIn"
@@ -65,9 +61,12 @@ export default function Blog() {
                       style={{ marginTop: "-75px" }}
                     >
                       <div className="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
-                        <a href={`/pages/blog/${blog?.id}`} className="btn text-white ">
-                        Read More
-                      </a>
+                        <a
+                          href={`/pages/blog/${blog?.id}`}
+                          className="btn text-white "
+                        >
+                          Read More
+                        </a>
                       </div>
                       <div className="blog-btn-icon btn btn-secondary px-4 py-3 rounded-pill ">
                         <div className="blog-icon-1">
@@ -129,7 +128,7 @@ export default function Blog() {
             <div
               className="text-center mx-auto pb-5 wow fadeIn"
               data-wow-delay=".3s"
-              style={{ maxWidth: "600px" }}
+              style={{ maxWidth: "600px", fontWeight: "bolder" }}
             >
               <p className="text-primary">Currently under development</p>
             </div>

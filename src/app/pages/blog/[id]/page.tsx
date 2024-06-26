@@ -1,7 +1,7 @@
+import HeaderDisplay from "@/app/components/HeaderDisplay";
 import {
   alt1,
   alt2,
-  blogs,
   del1,
   del2,
   del3,
@@ -11,16 +11,24 @@ import {
 } from "@/app/utils/consts";
 import { inspiration } from "@/app/utils/fonts";
 import formatTime from "@/app/utils/formatTime";
+import { getEntries, getEntry } from "@/app/utils/libs";
 import { faTag, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 
 export default async function Blog({ params }: { params: { id: string } }) {
-  const timestamp = new Date().getTime()
+  const timestamp = new Date().getTime();
+  const blog = await getEntry({ id: params.id });
+  const blogs = await getEntries({ contentType: "blog" });
+  const headerData = {
+    title: "Our Teachings ",
+    desc: "our publications on the teachings of Faith and Holy Communion",
+  };
+
   return (
     <>
-      <div className="container-fluid page-header py-5 mb-5">
+      {/* <div className="container-fluid page-header py-5 mb-5">
         <div className="container text-center py-5">
           <h1 className="display-2 text-white mb-4 animated slideInDown">
             Our Teachings
@@ -31,7 +39,8 @@ export default async function Blog({ params }: { params: { id: string } }) {
             </p>
           </nav>
         </div>
-      </div>
+      </div> */}
+      <HeaderDisplay {...headerData} />
       <div className="container-fluid  services py-3 mb-3">
         <div className="container pt-3">
           <div className="row g-5 services-inner">
@@ -120,8 +129,16 @@ export default async function Blog({ params }: { params: { id: string } }) {
                             height={100}
                           />
                           <div>
-                            <h4 className="d-flex"><Link href="/" style={{ marginLeft: "15px" }}>{p1}</Link></h4>
-                            <time className="d-flex" dateTime={`${timestamp}`}><span style={{ marginLeft: "15px" }}>{formatTime({ timestamp: timestamp })}</span></time>
+                            <h4 className="d-flex">
+                              <Link href="/" style={{ marginLeft: "15px" }}>
+                                {p1}
+                              </Link>
+                            </h4>
+                            <time className="d-flex" dateTime={`${timestamp}`}>
+                              <span style={{ marginLeft: "15px" }}>
+                                {formatTime({ timestamp: timestamp })}
+                              </span>
+                            </time>
                           </div>
                         </div>
                       ))}
